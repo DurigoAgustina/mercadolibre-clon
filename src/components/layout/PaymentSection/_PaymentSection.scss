@@ -1,0 +1,48 @@
+@use '../../../styles/variables';
+
+.payment-section {
+  padding: 40px 0;
+
+  &__items{
+    box-shadow: 0 1px 1px 0 rgb(0 0 0 / 10%);
+    background-color: #fff;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 4px;
+  }
+
+  &__item {
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+  }
+
+  &-icon {
+    width:20px;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+  
+  &__subtitle {
+    font-size: 1.4rem;
+    color: variables.$emphasis;
+  }
+
+  &__view-more {
+    border-left: 1px solid #eee;
+    padding: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .payment-section {
+    &__item:nth-child(2), &__item:nth-child(3), &__item:nth-child(4) {
+      display: none;
+    }
+  }
+}

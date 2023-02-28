@@ -1,0 +1,20 @@
+@use '../../../styles/variables';
+
+.recommendations {
+  display: flex;
+  flex-direction: column;
+  &__section {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 22px;
+    &-title {
+      color: #666666;
+      font-weight: 200;
+      font-size: 2.6rem;
+      a {
+        color: variables.$emphasis;
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

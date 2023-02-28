@@ -1,0 +1,234 @@
+@use '../../../styles/variables';
+
+.header {
+  height: 100px;
+  background-color: variables.$brand-color;
+  box-shadow: 0 1px 0 0 rgb(0 0 0 / 10%);
+  padding: 8px 0;
+  font-size: 14px;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 15% 55% 30%;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 'logo input image-right'
+                         'location category menu-right'  ;
+  }
+
+  &__logo{
+    background-image: url(../../../assets/meli-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 134px;
+    grid-area: logo;
+  }
+
+  &__input {
+    grid-area: input;
+  }
+
+  &__image-right {
+    max-width: 350px;
+    max-height: 39px;
+    grid-area: image-right;
+    display: block;
+    margin-left: auto;
+  }
+  
+  &__menu-toggle {
+    display: none;
+  }
+
+  &__Addresses {
+    display: flex;
+    align-items: end;
+  }
+  
+  &__location {
+    display: flex;
+    background-color: variables.$brand-color;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 4px;
+    grid-area: location;
+    width: max-content;
+    
+    &-arrow-right {
+      display: none;
+    }
+    
+    &:hover {
+      border-color: #eadd61;
+    }
+    
+    &-text {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+    
+    &-destinity {
+      color: #0000008c;
+      font-size: 12px;
+    }
+    &-direction {
+      font-size: 14px;
+    }
+  }
+
+  &__menu-middle{
+    color: #0000008c;
+    display: flex;
+    grid-area: category;
+    gap: 15px;
+    align-items: end;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+  }
+
+  &__menu-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    grid-area: menu-right;
+    gap: 15px;
+  }
+
+  &__menu-icon{
+    width: 20px;
+    margin-right: 5px;
+  }
+
+  &__menu-arrow {
+    transform: rotate(90deg);
+    width: 8px;
+  }
+
+  &__cart-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    &__logo {
+      background-image: url(../../../assets/meli-logo-mobile.png);
+      background-position: center;
+      width:39px;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: 10% 70% 10% 10%;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-areas: 'logo input menuHamburger cart '
+                           'location location location location'  ;
+    }
+
+    &__image-right {
+      display: none;
+    }
+
+    &__input {
+      grid-area: input;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__nav {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      height: 80vh;
+    }
+
+    &__menu-toggle{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      grid-area: menuHamburger;
+
+      span {
+        width: 30px;
+        height: 2px;
+        background-color: #0000008c;
+        border-radius: 5px;
+      }
+    }
+
+    .open span {
+      transform: rotate(45deg) translate(0px, 0px);
+    }
+
+    .open span:nth-child(2) {
+      display: none;
+    }
+
+    .open span:nth-child(3) {
+      transform: rotate(-45deg) translate(-5px, 1px);
+    }
+
+    &__cart-mobile {
+      display: block;
+      margin: auto;
+      width: 25px;
+      grid-area: cart;
+    }
+
+    &__addresses {
+      grid-area: location;
+      display: flex;
+      align-self: end;
+    }
+
+    &__location {
+      border: none;
+      display: flex;
+      align-items: end;
+      gap: 5px;
+      width: 100%;
+
+      &-arrow-right {
+        display: block;
+        align-self: center;
+        height: 10px;
+      }
+
+      img {
+        width: 15px;
+      }
+      &-text {
+        display: flex;
+        gap: 3px;
+        flex-direction: row;
+        color: #0000008c;
+      }
+      &-destinity {
+        font-size: 13px;
+      }
+      &-direction {
+        font-size: 13px;
+      }
+    }
+
+    &__menu-right {
+      display: none;
+    }
+
+    &__menu-middle {
+      display: none;
+    }
+
+  }
+
+}
