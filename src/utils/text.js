@@ -1,3 +1,12 @@
+import User from "../assets/user.svg"
+import Bell from "../assets/bell.svg"
+import Cart from "../assets/cart.svg"
+import CreditCard from "../assets/credit-card.svg"
+import DebitCard from "../assets/debit-card.svg"
+import MercadoCredito from "../assets/mercado-creditsv2.svg"
+import PaymentAgreement from '../assets/payment-agreement.svg'
+
+
 export const menuMiddle = [
   {
     title: "Categorías",
@@ -25,7 +34,7 @@ export const menuMiddle = [
 
 export const menuRight = [
   {
-    icon: "src/assets/user.svg",
+    icon: User,
     title: "Agustina...",
     arrow: true,
   },
@@ -37,32 +46,32 @@ export const menuRight = [
     arrow: true,
   },
   {
-    icon:"src/assets/bell.svg"
+    icon: Bell,
   },
   {
-    icon:"src/assets/cart.svg"
+    icon: Cart,
   }
 ]
 
 export const payments = [
   {
-    icon:'src/assets/credit-card.svg',
+    icon: CreditCard,
     title: 'Tarjeta de crédito',
     subtitle: 'Ver promociones bancarias'
   },
   {
-    icon: 'src/assets/debit-card.svg',
+    icon: DebitCard,
     title: 'Tarjeta de débito',
     subtitle: 'Ver más'
 
   },
   {
-    icon: 'src/assets/mercado-creditsv2.svg',
+    icon: MercadoCredito,
     title: 'Cuotas sin tarjeta',
     subtitle: 'Conocé Mercado Crédito'
   },
   {
-    icon: 'src/assets/payment-agreement.svg',
+    icon: PaymentAgreement,
     title:'Efectivo',
     subtitle: 'Ver más'
   }
