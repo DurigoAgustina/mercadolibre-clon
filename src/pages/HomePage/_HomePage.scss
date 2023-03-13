@@ -1,3 +1,10 @@
 .homepage {
   padding-bottom: 40px;
+
+  &__banner {
+    width: 100%;
+    max-width: 1600px;
+    display: block;
+    margin: 0 auto;
+  }
 }

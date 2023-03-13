@@ -6,7 +6,7 @@ import Recommendations from '../../components/layout/Recommendations/Recommendat
 const HomePage = () => {
   return (
     <div className='homepage'>
-      <img src={Banner} alt="" />
+      <img className='homepage__banner' src={Banner} alt="" />
       <PaymentSection />
       <Recommendations />
     </div>
